@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:urban_match/ui/home_page.dart';
 
 void main() {
+  forcePortraitMode();
   runApp(const MyApp());
+}
+
+void forcePortraitMode() async {
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
 }
 
 class MyApp extends StatelessWidget {
